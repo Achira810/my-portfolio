@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achira Hathsidu | Computer Engineering Student</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="loading-screen" id="loading">
+        <div class="loading-bg-animation">
+            <div class="loading-grid"></div>
+            <div class="loading-circles">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+            </div>
+            <div class="loading-particles" id="loadingParticles"></div>
+        </div>
+        <div class="loader-container">
+            <div class="loader-logo">ACHIRA.DEV</div>
+            <div class="loader-text">Loading Portfolio...</div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="loader-percentage" id="loaderPercentage">0%</div>
+        </div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Professional Background -->
+    <div class="professional-bg">
+        <!-- Subtle gradient overlay -->
+        <div class="gradient-overlay"></div>
+
+        <!-- Minimal grid pattern -->
+        <div class="grid-pattern"></div>
+
+        <!-- Subtle geometric accents -->
+        <div class="accent-lines">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+
+        <!-- Light Pillars -->
+        <div class="light-pillars">
+            <div class="pillar pillar-1"></div>
+            <div class="pillar pillar-2"></div>
+            <div class="pillar pillar-3"></div>
+            <div class="pillar pillar-4"></div>
+            <div class="pillar pillar-5"></div>
+        </div>
+
+        <!-- Corner decorations -->
+        <div class="corner-deco corner-tl"></div>
+        <div class="corner-deco corner-tr"></div>
+        <div class="corner-deco corner-bl"></div>
+        <div class="corner-deco corner-br"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <nav id="navbar">
+            <div class="container">
+                <div class="logo">ACHIRA.DEV</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <div class="theme-toggle" id="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <section id="home" class="hero">
+            <!-- Video Background -->
+            <div class="video-background">
+                <video autoplay muted loop playsinline id="hero-video">
+                    <source src="assets/bg.mp4" type="video/mp4">
+                    <!-- Fallback gradient if video doesn't load -->
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Hi, I'm <br><span class="highlight typing-effect">Achira Hathsidu</span></h1>
+                        <p>Computer Engineering Student | Creative Developer | Tech Enthusiast</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn">Get In Touch</a>
+                            <a href="#projects" class="btn btn-secondary">View Projects</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-container">
+                        <div class="profile-glow"></div>
+                        <img src="assets/profile.jpg" alt="Achira Hathsidu" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div id="about-lottie"></div>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            I'm a passionate Computer Engineering undergraduate student at General Sir John Kotelawala
+                            Defence University, dedicated to continuous learning and growth in the technology field.
+                        </p>
+                        <p>
+                            I'm someone who's always learning and improving, with a strong interest in technology and
+                            creative problem-solving. My goal is to build skills that help me grow personally and
+                            professionally, creating innovative solutions that make a difference.
+                        </p>
+                        <div class="info-grid">
+                            <div class="info-item"><strong>Age</strong> 22 years old</div>
+                            <div class="info-item"><strong>Born</strong> August 10, 2003</div>
+                            <div class="info-item"><strong>University</strong> KDU</div>
+                            <div class="info-item"><strong>Field</strong> Computer Engineering</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0" data-width="90%"></div>
+                            </div>
+                            <p class="skill-description">Building interactive web applications and dynamic user
+                                interfaces</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0" data-width="85%"></div>
+                            </div>
+                            <p class="skill-description">Object-oriented programming and software development</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0" data-width="80%"></div>
+                            </div>
+                            <p class="skill-description">Database design, management, and optimization</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0" data-width="95%"></div>
+                            </div>
+                            <p class="skill-description">Creating responsive and modern web layouts</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0" data-width="75%"></div>
+                            </div>
+                            <p class="skill-description">System programming and algorithm implementation</p>
+                        </div>
+                    </div>
+                    <div class="skills-visual">
+                        <div id="skills-lottie"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card-wrapper">
+                        <div class="project-card">
+                            <div class="project-card-front">
+                                <div class="project-image">
+                                    <img src="assets/web_application.png" alt="Web Application"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">Web Application</h3>
+                                    <p class="project-description">A full-stack web application built with modern
+                                        technologies,
+                                        featuring responsive design and interactive user interfaces.</p>
+                                    <div class="project-tags">
+                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">HTML/CSS</span>
+                                        <span class="tag">MySQL</span>
+                                    </div>
+                                </div>
+                                <div class="flip-indicator">
+                                    <span>Click to flip</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <h3>Project Details</h3>
+                                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                    A comprehensive full-stack web application featuring modern architecture and best
+                                    practices.
+                                </p>
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Responsive design for all devices</li>
+                                    <li>Real-time data synchronization</li>
+                                    <li>Secure user authentication</li>
+                                    <li>RESTful API integration</li>
+                                    <li>Database optimization</li>
+                                </ul>
+                                <h4>Technologies</h4>
+                                <div class="project-tags" style="margin-top: 10px;">
+                                    <span class="tag">React</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">Express</span>
+                                    <span class="tag">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card-wrapper">
+                        <div class="project-card">
+                            <div class="project-card-front">
+                                <div class="project-image">
+                                    <img src="assets/game_development.png" alt="Game Development"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">Game Development</h3>
+                                    <p class="project-description">Interactive game developed using C++ and advanced
+                                        algorithms
+                                        for optimal performance and user experience.</p>
+                                    <div class="project-tags">
+                                        <span class="tag">C++</span>
+                                        <span class="tag">Algorithms</span>
+                                    </div>
+                                </div>
+                                <div class="flip-indicator">
+                                    <span>Click to flip</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <h3>Project Details</h3>
+                                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                    High-performance game with advanced graphics and physics simulation.
+                                </p>
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Real-time physics engine</li>
+                                    <li>Optimized rendering pipeline</li>
+                                    <li>AI-powered opponents</li>
+                                    <li>Multiplayer support</li>
+                                    <li>Custom level editor</li>
+                                </ul>
+                                <h4>Technologies</h4>
+                                <div class="project-tags" style="margin-top: 10px;">
+                                    <span class="tag">C++</span>
+                                    <span class="tag">OpenGL</span>
+                                    <span class="tag">SDL</span>
+                                    <span class="tag">Box2D</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card-wrapper">
+                        <div class="project-card">
+                            <div class="project-card-front">
+                                <div class="project-image">
+                                    <img src="assets/data.png" alt="Data Management System"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">Data Management System</h3>
+                                    <p class="project-description">Comprehensive database management system with Java
+                                        backend
+                                        and optimized MySQL queries for efficient data handling.</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Java</span>
+                                        <span class="tag">MySQL</span>
+                                    </div>
+                                </div>
+                                <div class="flip-indicator">
+                                    <span>Click to flip</span>
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                            </div>
+                            <div class="project-card-back">
+                                <h3>Project Details</h3>
+                                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                    Enterprise-grade data management solution with advanced query optimization.
+                                </p>
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Advanced data analytics</li>
+                                    <li>Automated backup systems</li>
+                                    <li>Role-based access control</li>
+                                    <li>Query optimization</li>
+                                    <li>Data visualization dashboard</li>
+                                </ul>
+                                <h4>Technologies</h4>
+                                <div class="project-tags" style="margin-top: 10px;">
+                                    <span class="tag">Java</span>
+                                    <span class="tag">MySQL</span>
+                                    <span class="tag">Spring Boot</span>
+                                    <span class="tag">Hibernate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <div class="container">
+                <h2 class="section-title">Research Publications</h2>
+                <div class="research-container">
+                    <div class="research-card">
+                        <div class="research-header">
+                            <div class="research-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="research-badge">Published</div>
+                        </div>
+                        <div class="research-content">
+                            <h3 class="research-title">Design of an Intelligent Waste Segregation System</h3>
+                            <p class="research-description">
+                                This research paper presents an innovative approach to automated waste management
+                                through
+                                intelligent segregation systems. The study explores the integration of machine learning
+                                algorithms
+                                and sensor technologies to create an efficient, eco-friendly waste sorting solution that
+                                can
+                                significantly reduce environmental impact and improve recycling rates.
+                            </p>
+                            <div class="research-details">
+                                <div class="research-detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Published: 2025</span>
+                                </div>
+                                <div class="research-detail-item">
+                                    <i class="fas fa-flask"></i>
+                                    <span>Field: Environmental Engineering & AI</span>
+                                </div>
+                                <div class="research-detail-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Group Research Project</span>
+                                </div>
+                            </div>
+                            <div class="research-keywords">
+                                <span class="keyword">Machine Learning</span>
+                                <span class="keyword">IoT</span>
+                                <span class="keyword">Waste Management</span>
+                                <span class="keyword">Sustainability</span>
+                                <span class="keyword">Automation</span>
+                            </div>
+                            <div class="research-actions">
+                                <a href="assets/Design  OF AN INTELLIGENT WASTE SEGREGATION SYSTEM gr4 (1).docx"
+                                    download="Intelligent_Waste_Segregation_System.docx"
+                                    class="research-btn download-btn">
+                                    <i class="fas fa-download"></i> Download Paper
+                                </a>
+                                <button class="research-btn view-btn" onclick="viewResearchAbstract()">
+                                    <i class="fas fa-eye"></i> View Abstract
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:achirahathsidu100@email.com">achirahathsidu100@email.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fab fa-github"></i></div>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/Achira810" target="_blank">github.com/Achira810</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/achira-hathsidu-b35b77344" target="_blank">Connect
+                                    with me on LinkedIn</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fab fa-facebook"></i></div>
+                            <div class="contact-details">
+                                <h3>Facebook</h3>
+                                <a href="https://www.facebook.com/share/1RyJUs3jK7/?mibextid=wwXIfr"
+                                    target="_blank">Connect with me on Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <div class="form-header">
+                            <h3><span style="color: var(--accent-primary); margin-right: 10px;"><i
+                                        class="fas fa-paper-plane"></i></span> Send Message</h3>
+                        </div>
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <div class="input-wrapper">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                    <i class="fas fa-user input-icon"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <div class="input-wrapper">
+                                    <input type="email" name="email" placeholder="your@email.com" required>
+                                    <i class="fas fa-envelope input-icon"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <div class="input-wrapper">
+                                    <textarea name="message" placeholder="Your message..." rows="4" required></textarea>
+                                    <i class="fas fa-comment-alt input-icon"></i>
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn" id="formBtn">
+                                Send Message &nbsp;<i class="fas fa-paper-plane"></i>
+                            </button>
+                            <p id="formStatus" style="margin-top:15px; text-align:center; font-size:14px;"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <h3>Achira Hathsidu</h3>
+                        <p>A passionate Computer Engineering student dedicated to creating innovative solutions and
+                            continuous learning in the field of technology.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#research">Research</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="mailto:achirahathsidu100@email.com">Email</a></li>
+                            <li><a href="https://github.com/Achira810" target="_blank">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/achira-hathsidu-b35b77344"
+                                    target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.facebook.com/share/1RyJUs3jK7/?mibextid=wwXIfr"
+                                    target="_blank">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="social-links">
+                        <a href="https://github.com/Achira810" target="_blank" class="social-link"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/achira-hathsidu-b35b77344" target="_blank"
+                            class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:achirahathsidu100@email.com" class="social-link"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="https://www.facebook.com/share/1RyJUs3jK7/?mibextid=wwXIfr" target="_blank"
+                            class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <p style="margin-top: 20px;">&copy; 2025 Achira Hathsidu. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Research Abstract Modal -->
+        <div id="researchModal" class="research-modal">
+            <div class="modal-content">
+                <div class="modal-close" onclick="closeResearchModal()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <h2
+                    style="margin-bottom: 20px; background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Abstract</h2>
+                <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px;">
+                    The exponential growth in waste generation poses significant environmental challenges worldwide.
+                    Traditional waste management systems often struggle with efficient segregation, leading to
+                    contamination
+                    and reduced recycling rates. This research presents the design and implementation of an intelligent
+                    waste segregation system that leverages cutting-edge technologies including machine learning,
+                    computer
+                    vision, and IoT sensors.
+                </p>
+                <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px;">
+                    Our system employs a convolutional neural network (CNN) trained on a diverse dataset of waste
+                    materials
+                    to classify waste into multiple categories (biodegradable, recyclable, hazardous, and general waste)
+                    with an accuracy of over 92%. The integration of smart sensors and automated sorting mechanisms
+                    enables
+                    real-time waste classification and segregation, significantly reducing human intervention and
+                    associated
+                    health risks.
+                </p>
+                <p style="line-height: 1.8; color: var(--text-secondary);">
+                    Field testing demonstrated that our intelligent waste segregation system improves sorting efficiency
+                    by
+                    78% compared to manual methods while reducing contamination rates by 65%. This research contributes
+                    to
+                    sustainable waste management practices and provides a scalable solution for smart cities and
+                    communities
+                    committed to environmental conservation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
